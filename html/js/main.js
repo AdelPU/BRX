@@ -10,6 +10,24 @@
  
  ------------------------------------------------------- */
 
+// Header scroll
+let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // If scrolling down, hide the header
+    if (scrollTop > lastScrollTop) {
+      header.style.top = "-150px"; // Adjust value based on header height
+    } else {
+      // If scrolling up, show the header
+      header.style.top = "0";
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+  });
+// ---
+
 (function ($) {
 
     "use strict";
@@ -3598,10 +3616,11 @@ function initMap() {
             mapOptions = $.parseJSON(mapOptions);
         }
 
-        let lat = mapOptions.lat ? mapOptions.lat : 19.07,
-                lng = mapOptions.lng ? mapOptions.lng : 72.87,
-                marker = mapOptions.marker,
-                popup = mapOptions.popup;
+        let lat = mapOptions.lat ? mapOptions.lat : 25.1744,
+            lng = mapOptions.lng ? mapOptions.lng : 55.3711,
+            marker = mapOptions.marker,
+            popup = mapOptions.popup;
+
 
         switch (mapOptions.style && mapOptions.style.toLowerCase()) {
             case 'retro':
@@ -3630,7 +3649,7 @@ function initMap() {
         const gmap = new google.maps.Map(this, {
             zoom: 13,
             center: new google.maps.LatLng(lat, lng),
-            mapTypeId: google.maps.MapTypeId.READMAP,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
             styles: map_style
         });
 
