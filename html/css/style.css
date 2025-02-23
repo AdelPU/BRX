@@ -19347,8 +19347,19 @@ footer .footer-navbar .nav-item:last-child a {
 
 /* added because of having only 2 columns (company-services) */
 @media (min-width: 1200px) {
-  .col-xl-2 {
+  footer .col-xl-2 {
     width: 25% !important;
   }
   
+}
+
+@media (max-width: 576px){
+  footer .col-6{
+    width: 100% !important;
+  }
+
+  footer .justify-content-center{
+    justify-content: flex-start !important;
+  }
+
 }

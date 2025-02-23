@@ -19682,7 +19682,7 @@
     padding-bottom: 0;
   }
   header .navbar-brand {
-    padding: 22px 0;
+    padding: 18px 0;
   }
   header .navbar-brand .default-logo, header .navbar-brand .alt-logo {
     visibility: hidden !important;
@@ -19692,7 +19692,9 @@
   header .navbar-brand .mobile-logo {
     visibility: visible !important;
     opacity: 1 !important;
-    width: auto !important;
+    /* width: auto !important; */
+    width: 60px !important;
+    max-height: 100%;
   }
   header .navbar-brand .mobile-logo:focus {
     outline: none;
