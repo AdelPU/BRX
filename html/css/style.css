@@ -6764,6 +6764,17 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
 /* ===================================
    10. Header
 ====================================== */
+/* Added to fix the header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  transition: top 0.3s ease-in-out;
+}
+/* --- */
+
 header .header-top-bar [class*=col-] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6882,7 +6893,9 @@ header.sticky.sticky-active .header-reverse.header-dark.glass-effect {
 header.sticky.sticky-active .navbar-brand .alt-logo {
   visibility: visible;
   opacity: 1;
-  width: auto;
+  /* width: auto; */
+  width: 80px;
+  max-height: 100%;
 }
 header.sticky.sticky-active .navbar-brand .default-logo {
   visibility: hidden;
@@ -7004,7 +7017,7 @@ header.sticky .mini-header .header-icon .header-cart-icon .header-cart a i {
   padding-bottom: 16px;
 }
 header.sticky .fixed-header .navbar-brand, header.sticky .disable-fixed .navbar-brand {
-  padding: 30px 0;
+  padding: 20px 0;
 }
 header .navbar {
   -webkit-transition: 0.3s;
@@ -19236,6 +19249,7 @@ canvas {
    17. Footer
 ====================================== */
 footer {
+  margin-top: 1rem;
   padding-top: 110px;
   padding-bottom: 110px;
 }
@@ -19329,4 +19343,12 @@ footer .footer-navbar .nav-item:last-child a {
 }
 .footer-demo img {
   max-height: 55px !important;
+}
+
+/* added because of having only 2 columns (company-services) */
+@media (min-width: 1200px) {
+  .col-xl-2 {
+    width: 25% !important;
+  }
+  
 }
